@@ -1,0 +1,113 @@
+
+.navbar .recettes {
+    color: white;
+
+  }
+
+  .recettes{
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 5px;
+  }
+
+  .recettes:hover{
+    background-color: #007bff;
+    border-radius: 5px;
+  }
+
+
+  #plat {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  #plat div {
+    margin: 10px;
+    width: 300px;
+  }
+  
+  #plat .card {
+    margin: 10px;
+    min-height: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease; 
+}
+
+#plat .card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Lorsque survolé, l'ombre s'agrandit */
+}
+
+ 
+  .btn-outline-success {
+    border-color: #007bff;
+    color: white;
+  }
+  
+  .btn-outline-success:hover {
+    background-color: #007bff;
+  }
+
+
+
+  footer {
+    background-color: #343a40; 
+    color: white; 
+    padding: 20px 0; 
+  }
+  
+  footer a {
+    color: #fff; 
+  }
+  
+  footer a:hover {
+    color: #ffc107; 
+  }
+  
+
+  .container {
+    max-width: 1200px; 
+    margin: 20px auto;
+    background-color: #ecececec;
+    padding: 5px;
+  }
+  
+  .custom-jumbotron {
+    text-align: center;
+    margin-bottom: 50px; 
+  }
+  
+
+.row{
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+
+li{
+
+    text-decoration: none;
+}
+  
+
+
+
+
+#plat .card img {
+  width: 100%;
+  height: 200px; 
+  object-fit: cover; 
+}
+
+.card {
+  border-radius: 10px; /* Ajoute des coins arrondis aux cartes */
+}
+
+.card img {
+  border-top-left-radius: 10px; /* Coin arrondi en haut à gauche de l'image */
+  border-top-right-radius: 10px; /* Coin arrondi en haut à droite de l'image */
+}
+
+
+
+
