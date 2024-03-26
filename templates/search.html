@@ -1,0 +1,30 @@
+{% include "header.html" %}
+
+<main>
+  <div class="container">
+    <div class="text-center mt-4 mb-4">
+      <h1>{{ found['num_found'] }} recettes trouvées (page {{ found['page'] }}/{{ found['num_pages'] }})</h1>
+    </div>
+
+    <div id="plat" class="row row-cols-1 row-cols-md-4 g-4">
+      {% for result in found['results'] %}
+      <div class="col mb-4">
+        <div class="card h-100">
+          <a href="/read/{{ result['entry'] }}">
+            <img src="{{ result['img'] }}" class="card-img-top" alt="{{ result['title'] }}">
+          </a>
+          <div class="card-body">
+            <p class="card-text text-center">{{ result['title'] }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-4 mb-4">
+      <a href="/search?query={{ found['query'] }}&page={{ found['next_page'] }}" class="btn btn-outline-primary">Page suivante</a>
+    </div>
+  </div>
+</main>
+
+{% include "footer.html" %}

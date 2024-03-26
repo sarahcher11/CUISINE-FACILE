@@ -1,0 +1,39 @@
+{% include "header.html" %}
+
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-body">
+      <h1 class="card-title">Modifier la recette</h1>
+      <form action="/update/{{ recipe['id'] }}" method="post">
+        <div class="form-group">
+          <label for="title">Titre :</label>
+          <input type="text" class="form-control" id="title" name="title" value="{{ recipe['title'] }}">
+        </div>
+        <div class="form-group">
+          <label for="description">Description :</label>
+          <textarea class="form-control" id="description" name="description">{{ recipe['description'] }}</textarea>
+        </div>
+        <div class="form-group">
+          <label for="duration">Durée :</label>
+          <input type="text" class="form-control" id="duration" name="duration" value="{{ recipe['duration'] }}">
+        </div>
+        <div class="form-group">
+          <label for="img">Image :</label>
+          <input type="text" class="form-control" id="img" name="img" value="{{ recipe['img'] }}">
+        </div>
+        <div class="form-group">
+          <label for="ingredients">Ingrédients :</label>
+          <textarea class="form-control" id="ingredients" name="ingredients" rows="5">{% for ingredient in recipe['ingredients'] %}- {{ ingredient['name'] }}{% endfor %}</textarea>
+        </div>
+        <div class="form-group">
+          <label for="stages">Étapes :</label>
+          <textarea class="form-control" id="stages" name="stages" rows="5">{% for stage in recipe['stages'] %}- {{ stage['description'] }}{% endfor %}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Modifier</button>
+        <a href="/read/{{ recipe['id'] }}" class="btn btn-secondary">Annuler</a>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% include "footer.html" %}

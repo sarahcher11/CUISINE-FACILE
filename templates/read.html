@@ -1,0 +1,54 @@
+{% include "header.html" %}
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title">{{ recipe['title'] }}</h1>
+          <p class="card-text">{{ recipe['description'] }}</p>
+          <p class="card-text">Durée : {{ recipe['duration'] }}</p>
+          {% if 'user_id' in session %}
+          <div class="d-flex justify-content-end">
+            <a href="/update/{{ recipe['id'] }}" class="btn btn-primary mr-2">Modifier</a>
+            <a href="/delete/{{ recipe['id'] }}" class="btn btn-danger">Supprimer</a>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img src="{{ recipe['img'] }}" class="card-img-top" alt="{{ recipe['title'] }}">
+      </div>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Ingrédients :</h2>
+          <ul class="list-group list-group-flush">
+            {% for ingredient in recipe['ingredients'] %}
+            <li class="list-group-item">{{ ingredient['name'] }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Étapes :</h2>
+          <ol class="list-group list-group-flush">
+            {% for stage in recipe['stages'] %}
+            <li class="list-group-item">{{ stage['description'] }}</li>
+            {% endfor %}
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include "footer.html" %}
