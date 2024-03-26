@@ -1,0 +1,16 @@
+{% include "header.html" %}
+
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-body">
+      <h1 class="card-title">Supprimer une recette</h1>
+      <p class="card-text">Êtes-vous sûr de vouloir supprimer la recette "{{ title }}" ?</p>
+      <form action="/delete/{{ id }}" method="post">
+        <button type="submit" class="btn btn-danger">Effacer</button>
+        <a href="/read/{{ id }}" class="btn btn-secondary">Annuler</a>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% include "footer.html" %}

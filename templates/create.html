@@ -1,0 +1,38 @@
+{% include "header.html" %}
+
+<div class="container mt-5">
+  <form action="/create" method="post">
+    <div class="card">
+      <div class="card-body">
+        <h1 class="card-title">Créer une nouvelle recette</h1>
+        <div class="mb-3">
+          <label for="title" class="form-label">Titre :</label>
+          <input type="text" class="form-control" id="title" name="title">
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Description :</label>
+          <textarea class="form-control" id="description" name="description"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="duration" class="form-label">Durée :</label>
+          <input type="text" class="form-control" id="duration" name="duration">
+        </div>
+        <div class="mb-3">
+          <label for="img" class="form-label">Image :</label>
+          <input type="text" class="form-control" id="img" name="img">
+        </div>
+        <div class="mb-3">
+          <h2>Ingrédients (liste à tirets)</h2>
+          <textarea class="form-control" name="ingredients"></textarea>
+        </div>
+        <div class="mb-3">
+          <h2>Étapes (liste à tirets)</h2>
+          <textarea class="form-control" name="stages"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Créer</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+{% include "footer.html" %}
